@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
        // auth.getDefaultUserDetailsService().loadUserByUsername(username);
-//    	auth.inMemoryAuthentication().withUser("ppattan@osius.com").password("Osi@4321").roles("ADMIN")
+//    	auth.inMemoryAuthentication().withUser("ppattan@yahoo.co.in").password("pawan1234pattan").roles("ADMIN")
 //    	.and().withUser("user1").password("pass1").roles("ADMIN");
     	auth.authenticationProvider(activeDirectoryLdapAuthenticationProvider());//.userDetailsService(employeeService);
     }
@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Bean
     public ActiveDirectoryLdapAuthenticationProvider activeDirectoryLdapAuthenticationProvider() throws Exception{
-        ActiveDirectoryLdapAuthenticationProvider provider = new ActiveDirectoryLdapAuthenticationProvider("osius.com", "ldap://192.168.32.22:389");
+        ActiveDirectoryLdapAuthenticationProvider provider = new ActiveDirectoryLdapAuthenticationProvider("osius.com", "ldap://192.168.86.56:329");
         provider.setConvertSubErrorCodesToExceptions(true);
         provider.setUseAuthenticationRequestCredentials(false);
         provider.setUserDetailsContextMapper(employeeService);
